@@ -423,7 +423,7 @@ async function laad(){
     const lokaal=punten.filter(p=>pending.has(p.id));
     punten=(d.punten||[]).concat(lokaal.filter(p=>!(d.punten||[]).some(q=>q.id===p.id)));
     if(d.klassen&&d.klassen.length){ klassen=d.klassen; if(gekozen&&!klassen.includes(gekozen)) gekozen=null; }
-    zetStatus("Gekoppeld aan de Google Sheet · bijgewerkt om "+new Date().toLocaleTimeString("nl-NL",{hour:"2-digit",minute:"2-digit"}));
+    zetStatus("Bijgewerkt om "+new Date().toLocaleTimeString("nl-NL",{hour:"2-digit",minute:"2-digit"}));
     renderAll();
   }catch(e){ zetStatus("Geen verbinding met de Google Sheet. Duimen geven lukt pas weer als de verbinding terug is.",true); }
   laadBezig=false;
